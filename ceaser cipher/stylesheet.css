@@ -5,8 +5,8 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    font-family: anybody;
+    background-color: #ff9b9b;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,7 +43,7 @@ label {
     margin-top: 20px;
     padding: 10px 20px;
     border: none;
-    background-color: #4CAF50;
+    background-color: #ff4040;
     color: white;
     border-radius: 5px;
     cursor: pointer;
@@ -51,7 +51,7 @@ label {
 }
 
 .convert-btn:hover {
-    background-color: #45a049;
+    background-color: #ff4040;
 }
 
 .result {
@@ -59,7 +59,7 @@ label {
 }
 
 #resultText {
-    font-size: 18px;
+    font-size: 50px;
     font-weight: bold;
     color: #333;
 }

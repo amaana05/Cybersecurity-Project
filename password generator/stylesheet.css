@@ -1,4 +1,3 @@
-/* Basic reset */
 * {
     margin: 0;
     padding: 0;
@@ -6,8 +5,8 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+    font-family: anybody;
+    background-color: rgb(249, 236, 197);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,8 +50,9 @@ input[type="number"] {
 button {
     padding: 10px;
     font-size: 18px;
-    color: white;
-    background-color: #4CAF50;
+    color: black;
+    font-weight: bold;
+    background-color: rgb(254, 211, 81);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -60,12 +60,12 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: rgb(245, 188, 20);
 }
 
 .password-result {
     margin-top: 30px;
-    font-size: 32px;
+    font-size: 50px;
     color: #333;
     word-wrap: break-word;
     padding: 10px;

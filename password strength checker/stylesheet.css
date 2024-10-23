@@ -6,8 +6,8 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+    font-family: anybody;
+    background-color: rgb(255, 173, 255);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,7 +52,7 @@ button {
     padding: 10px;
     font-size: 18px;
     color: white;
-    background-color: #4CAF50;
+    background-color: rgb(219, 36, 219);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -60,15 +60,15 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: rgb(219, 36, 219);
 }
 
 .strength-result {
     margin-top: 30px;
-    font-size: 24px;
+    font-size: 50px;
     color: #333;
     padding: 10px;
-    border: 2px solid #4CAF50;
+    border: 2px solid rgb(219, 36, 219);
     border-radius: 5px;
     background-color: #f9f9f9;
 }

@@ -3,6 +3,9 @@ function convertText() {
     const shiftAmount = parseInt(document.getElementById('shiftAmount').value);  // Get the shift amount
     let result = '';   
 
+
+    //note: add two divs for both encryotion and decryption controlled with a single button on the website
+
     
     for (let i = 0; i < inputText.length; i++) {
         let char = inputText[i];   

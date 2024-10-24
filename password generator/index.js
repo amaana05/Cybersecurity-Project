@@ -8,6 +8,9 @@ function generatePassword(length) {
     return password;
 }
 
+        // notes: add a different charset for the alpahbets, numbers and alphanumneric values
+        // for a strong password everytime
+
  
 document.getElementById('generateBtn').addEventListener('click', () => {
     const length = document.getElementById('length').value;

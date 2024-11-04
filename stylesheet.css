@@ -3,7 +3,7 @@ body{
     margin: 0;
     margin-top: 20px;
     padding: 0;
-    background-image: url(images/gridbackground.png);
+    /* background-image: url(images/gridbackground.png); */
 
     display: flex;
     justify-content: center;

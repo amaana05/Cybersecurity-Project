@@ -3,16 +3,12 @@ document.getElementById('fetchNewsButton').addEventListener('click', fetchNews);
 async function fetchNews() {
     // const apiKey = 'YOUR_API_KEY';
     const apiUrl = 'https://saurav.tech/NewsAPI/top-headlines/category/technology/us.json';
-    const apiUrl1 = 'https://saurav.tech/NewsAPI/top-headlines/category/technology/in.json'
 
     try {
         const response = await fetch(apiUrl);
-        const repsonse1 = await fetch(apiUrl1)
         const data = await response.json();
-        const data1 = await repsonse1.json();
 
         displayNews(data.articles);
-        displayNews(data1.articles);
     } catch (error) {
         console.error('Error fetching news:', error);
         document.getElementById('newsContainer').innerHTML = `<p style="color: red;">Error loading news.</p>`;

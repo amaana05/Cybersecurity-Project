@@ -1,20 +1,38 @@
-const cipherMap = {
-    'A': 'Q', 'B': 'W', 'C': 'E', 'D': 'R', 'E': 'T',
-    'F': 'Y', 'G': 'U', 'H': 'I', 'I': 'O', 'J': 'P',
-    'K': 'A', 'L': 'S', 'M': 'D', 'N': 'F', 'O': 'G',
-    'P': 'H', 'Q': 'J', 'R': 'K', 'S': 'L', 'T': 'Z',
-    'U': 'X', 'V': 'C', 'W': 'V', 'X': 'B', 'Y': 'N',
-    'Z': 'M', ' ': ' ', 
-};
+const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const shuffledAlphabet = 'QWERTYUIOPASDFGHJKLZXCVBNM';
 
-function convertToCipher() {
-    const inputText = document.getElementById('inputText').value.toUpperCase();  
-    let cipherText = '';  
- 
-    for (let i = 0; i < inputText.length; i++) {
-        const char = inputText[i];
-        cipherText += cipherMap[char] ? cipherMap[char] : char; 
+document.getElementById('toggleButton').addEventListener('click', () => {
+    const inputText = document.getElementById('inputText').value.toUpperCase();
+
+    const encryptText = monoalphabeticEncrypt(inputText);
+    const decryptText = monoalphabeticDecrypt(encryptText);
+
+    document.getElementById('encryptResult').innerText = `Encrypted Text: ${encryptText}`;
+    document.getElementById('decryptResult').innerText = `Decrypted Text: ${decryptText}`;
+});
+
+function monoalphabeticEncrypt(input) {
+    let result = '';
+    for (let char of input) {
+        if (alphabet.includes(char)) {
+            const index = alphabet.indexOf(char);
+            result += shuffledAlphabet[index];
+        } else {
+            result += char; // Non-alphabet characters stay the same
+        }
     }
+    return result;
+}
 
-    document.getElementById('cipherResult').textContent = cipherText;
+function monoalphabeticDecrypt(input) {
+    let result = '';
+    for (let char of input) {
+        if (shuffledAlphabet.includes(char)) {
+            const index = shuffledAlphabet.indexOf(char);
+            result += alphabet[index];
+        } else {
+            result += char;
+        }
+    }
+    return result;
 }

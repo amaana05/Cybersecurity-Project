@@ -86,7 +86,7 @@ button {
     border: none;
     border-radius: 5px;
     color: #333;
-    box-shadow: 4px 4px #555;
+    box-shadow: 4px 4px #000000;
     cursor: pointer;
     transition: transform 0.2s;
 }

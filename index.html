@@ -4,74 +4,113 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CyberSec</title>
-
+    
     <link rel="stylesheet" href="./stylesheet.css"/>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anybody:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-    <!-- note: add a news site in the middle and make a sticky sidebar on each side (static and not dynamic) for all the buttons present right now. -->
-     <!-- make the hyperlinks open in the same tab instead of opening in the new one -->
-      <!-- make all the individual website a little bigger -->
-
 </head>
-    
+
 <body>
-    
-    <div class="container">
 
+    <!-- Heading Section -->
+    <header>
         <h1><span class="hiveText">CyberSec</span></h1>
-        <p><span class="subHeading">all in one Cybersecurity Tool</span></p>
+        <p><span class="subHeading">All-in-One Cybersecurity Tool</span></p>
+    </header>
 
+    <!-- Main Content with 3 Vertical Sections -->
+    <div class="container">
+        <!-- Left Section with Buttons -->
+        <div class="section left-section">
+            <div class="button">
+                <a href="password generator/index.html" target="_blank">
+                    <button class="button1 activeButton">Random Password Gen.</button>
+                </a>
+            </div> 
+            <div class="button">
+                <a href="password strength checker/index.html" target="_blank">
+                    <button class="button2 activeButton">Password Strength Checker</button>
+                </a>
+            </div> 
+            <div class="button">
+                <a href="morse code/index.html" target="_blank">
+                    <button class="button3 activeButton">Morse Code</button>
+                </a>
+            </div>
+        </div>
 
-        <div class="button">
+        <!-- Center Section for News Display -->
+        <div class="section center-section">
+            <button id="fetchNewsButton" class="fetch-news-button">Fetch Latest News</button>
+            <div id="newsDisplay" class="news-display"></div>
+        </div>
 
-            <a href="password generator/index.html" target="_blank">
-                <button class="button1 activeButton">Random Password Gen.</button>
-            </a>
-        </div> 
-
-        <div class="button">
-
-            <a href="password strength checker/index.html" target="_blank">
-                <button class="button2 activeButton">Password Strength Checker</button>
-            </a>
-        </div> 
-
-        <div class="button">
-
-            <a href="morse code/index.html" target="_blank">
-                <button class="button3 activeButton">Morse Code</button>
-            </a>
-        </div> 
-
-        <div class="button">
-
-            <a href="ceaser cipher/index.html" target="_blank">
-                <button class="button4 activeButton">Ceaser Cipher</button>
-            </a>
-        </div> 
-
-        <div class="button">
-
-            <a href="monoalphabetic cipher/index.html" target="_blank">
-                <button class="button5 activeButton">Monoalphabetic Cipher</button>
-            </a>
-        </div> 
-
-        
-        <footer>
-
-            <a id="githubLink" href="https://github.com/amaana05">GitHub</a>
-        
-            <a  id="twitterLink" href="https://x.com/meow5402">twitter</a>
-        
-        </footer>
-
+        <!-- Right Section with More Buttons -->
+        <div class="section right-section">
+            <div class="button">
+                <a href="ceaser cipher/index.html" target="_blank">
+                    <button class="button4 activeButton">Ceaser Cipher</button>
+                </a>
+            </div> 
+            <div class="button">
+                <a href="monoalphabetic cipher/index.html" target="_blank">
+                    <button class="button5 activeButton">Monoalphabetic Cipher</button>
+                </a>
+            </div> 
+        </div>
     </div>
 
+    <!-- Embedded JavaScript for News API -->
+    <script>
+        document.getElementById('fetchNewsButton').addEventListener('click', fetchNews);
 
-    <script src="./index.js"></script>
+        async function fetchNews() {
+            const apiUrl = 'https://saurav.tech/NewsAPI/top-headlines/category/technology/us.json';
+
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+
+                displayNews(data.articles);
+            } catch (error) {
+                console.error('Error fetching news:', error);
+                document.getElementById('newsDisplay').innerHTML = `<p style="color: red;">Error loading news.</p>`;
+            } 
+        }
+
+        function displayNews(articles) {
+            const newsDisplay = document.getElementById('newsDisplay');
+            newsDisplay.innerHTML = '';
+
+            articles.forEach(article => {
+                const articleElement = document.createElement('div');
+                articleElement.classList.add('news-card');
+
+                articleElement.innerHTML = `
+                    <div class="news-card">
+                        <img src="${article.urlToImage}" alt="News Image" class="news-image">
+                        <div class="news-content">
+                            <h2>${article.title}</h2>
+                            <p>${article.description}</p>
+                            <a href="${article.url}" target="_blank">Read more</a>
+                        </div>
+                    </div>
+                `;
+
+                newsDisplay.appendChild(articleElement);
+            });
+        }
+    </script>
+
 </body>
+
+<footer>
+
+    <a id="githubLink" href="https://github.com/amaana05">GitHub</a>
+
+    <a  id="twitterLink" href="https://x.com/meow5402">twitter</a>
+
+</footer>
+
 </html>

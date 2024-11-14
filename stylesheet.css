@@ -8,6 +8,12 @@ body {
     align-items: center;
     background-color: #1c1c1c;
     color: #fff;
+
+    background-image: url('./images/hacker\ background.png'); 
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;
+    
 }
 
 /* Header section styling */
@@ -56,6 +62,7 @@ header .subHeading {
     background-color: #333;
     border-radius: 10px;
     overflow-y: auto;
+    opacity: 0.9;
 }
 
 .left-section, .right-section {

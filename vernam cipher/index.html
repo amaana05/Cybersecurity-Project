@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vernam Cipher</title>
+    <link rel="stylesheet" href="./stylesheet.css">
+
+    <link rel="stylesheet" href="./stylesheet.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anybody:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Vernam Cipher Tool</h1>
+
+        <div class="input-section">
+            <label for="inputText">Enter Text:</label>
+            <input type="text" id="inputText" placeholder="Enter text to encrypt or decrypt...">
+        </div>
+
+        <div class="input-section">
+            <label for="keyText">Enter Key (must be same length as text):</label>
+            <input type="text" id="keyText" placeholder="Enter encryption key...">
+        </div>
+
+        <button id="toggleButton">Encrypt & Decrypt</button>
+
+        <div class="results">
+            <div class="result-text">
+                <h3>Encrypted Text:</h3>
+                <p id="encryptResult">N/A</p>
+            </div>
+            <div class="result-text">
+                <h3>Decrypted Text:</h3>
+                <p id="decryptResult">N/A</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+</html>
